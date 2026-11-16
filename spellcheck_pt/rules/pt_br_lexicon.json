@@ -1,0 +1,504 @@
+{
+  "description": "Rules for detecting and correcting Brazilian Portuguese vocabulary and spelling to European Portuguese (pt-PT)",
+  "word_replacements": {
+    "predição": {
+      "suggestion": "previsão",
+      "context": "estatística / machine learning / computação",
+      "explanation": "Em pt-PT técnico e científico usa-se 'previsão' (decalque frequente do inglês 'prediction' e comum em pt-BR)."
+    },
+    "predições": {
+      "suggestion": "previsões",
+      "context": "estatística / machine learning / computação",
+      "explanation": "Em pt-PT técnico e científico usa-se 'previsões' ('prediction' / pt-BR)."
+    },
+    "arquivo": {
+      "suggestion": "ficheiro",
+      "context": "computação / dados",
+      "explanation": "Em pt-PT usa-se 'ficheiro' para ficheiros informáticos ('arquivo' é o arquivo físico/histórico ou verbo arquivar)"
+    },
+    "arquivos": {
+      "suggestion": "ficheiros",
+      "context": "computação / dados",
+      "explanation": "Em pt-PT usa-se 'ficheiros' para documentos digitais."
+    },
+    "usuario": {
+      "suggestion": "utilizador",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'utilizador'."
+    },
+    "usuário": {
+      "suggestion": "utilizador",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'utilizador'."
+    },
+    "usuarios": {
+      "suggestion": "utilizadores",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'utilizadores'."
+    },
+    "usuários": {
+      "suggestion": "utilizadores",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'utilizadores'."
+    },
+    "tela": {
+      "suggestion": "ecrã",
+      "context": "monitores / informática",
+      "explanation": "Em pt-PT diz-se 'ecrã' para dispositivos visuais ('tela' apenas para pintura a óleo/tecido)."
+    },
+    "telas": {
+      "suggestion": "ecrãs",
+      "context": "monitores / informática",
+      "explanation": "Em pt-PT diz-se 'ecrãs'."
+    },
+    "cadastrar": {
+      "suggestion": "registar / inscrever",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'registar' ou 'inscrever' (o termo 'cadastrar' é quase exclusivo de pt-BR)."
+    },
+    "cadastro": {
+      "suggestion": "registo / inscrição",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'registo' ('cadastro' é apenas registo predial/criminal)."
+    },
+    "cadastrado": {
+      "suggestion": "registado / inscrito",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'registado'."
+    },
+    "cadastrados": {
+      "suggestion": "registados / inscritos",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'registados'."
+    },
+    "cadastrada": {
+      "suggestion": "registada / inscrita",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'registada'."
+    },
+    "cadastradas": {
+      "suggestion": "registadas / inscritas",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'registadas'."
+    },
+    "time": {
+      "suggestion": "equipa",
+      "context": "desporto / grupos",
+      "explanation": "Em pt-PT usa-se 'equipa' ('time' é anglicismo brasileiro)."
+    },
+    "times": {
+      "suggestion": "equipas",
+      "context": "desporto / grupos",
+      "explanation": "Em pt-PT usa-se 'equipas'."
+    },
+    "trem": {
+      "suggestion": "comboio",
+      "context": "transportes",
+      "explanation": "Em pt-PT usa-se 'comboio'."
+    },
+    "trens": {
+      "suggestion": "comboios",
+      "context": "transportes",
+      "explanation": "Em pt-PT usa-se 'comboios'."
+    },
+    "ônibus": {
+      "suggestion": "autocarro",
+      "context": "transportes",
+      "explanation": "Em pt-PT usa-se 'autocarro'."
+    },
+    "onibus": {
+      "suggestion": "autocarro",
+      "context": "transportes",
+      "explanation": "Em pt-PT usa-se 'autocarro'."
+    },
+    "bonde": {
+      "suggestion": "elétrico",
+      "context": "transportes",
+      "explanation": "Em pt-PT usa-se 'elétrico'."
+    },
+    "metrô": {
+      "suggestion": "metro",
+      "context": "transportes",
+      "explanation": "Em pt-PT escreve-se 'metro' (sem acento circunflexo)."
+    },
+    "mouse": {
+      "suggestion": "rato",
+      "context": "informática",
+      "explanation": "Em pt-PT usa-se 'rato'."
+    },
+    "mouses": {
+      "suggestion": "ratos",
+      "context": "informática",
+      "explanation": "Em pt-PT usa-se 'ratos'."
+    },
+    "salvar": {
+      "suggestion": "guardar",
+      "context": "ficheiros / informática",
+      "explanation": "Em pt-PT usa-se 'guardar' (um ficheiro/dados); 'salvar' é salvar uma vida/alma."
+    },
+    "salve": {
+      "suggestion": "guarde",
+      "context": "ficheiros / informática",
+      "explanation": "Em pt-PT usa-se 'guarde' para ficheiros."
+    },
+    "salvo": {
+      "suggestion": "guardado",
+      "context": "ficheiro guardado",
+      "explanation": "Em pt-PT diz-se 'ficheiro guardado'."
+    },
+    "deletar": {
+      "suggestion": "eliminar / apagar",
+      "context": "informática",
+      "explanation": "Em pt-PT usa-se 'eliminar' ou 'apagar'."
+    },
+    "deletado": {
+      "suggestion": "eliminado / apagado",
+      "context": "informática",
+      "explanation": "Em pt-PT usa-se 'eliminado' ou 'apagado'."
+    },
+    "clicar": {
+      "suggestion": "clicar / premir",
+      "context": "informática",
+      "explanation": "Em pt-PT é frequente 'carregar em' ou 'premir' ou 'fazer clique em'."
+    },
+    "recarregar": {
+      "suggestion": "recarregar / atualizar",
+      "context": "páginas web",
+      "explanation": "Em pt-PT para páginas web prefere-se 'atualizar' (refresh)."
+    },
+    "propósito": {
+      "suggestion": "propósito / objetivo",
+      "context": "geral",
+      "explanation": "Válido, mas atenção a usos forçados de traduções literais."
+    },
+    "planejamento": {
+      "suggestion": "planeamento",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'planeamento'."
+    },
+    "planejar": {
+      "suggestion": "planear",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'planear'."
+    },
+    "planejado": {
+      "suggestion": "planeado",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'planeado'."
+    },
+    "planejada": {
+      "suggestion": "planeada",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'planeada'."
+    },
+    "planejam": {
+      "suggestion": "planeiam",
+      "context": "geral",
+      "explanation": "Em pt-PT conjuga-se 'planeiam'."
+    },
+    "planejamos": {
+      "suggestion": "planeamos",
+      "context": "geral",
+      "explanation": "Em pt-PT conjuga-se 'planeamos'."
+    },
+    "abotoador": {
+      "suggestion": "apertador",
+      "context": "geral",
+      "explanation": "pt-BR."
+    },
+    "açougue": {
+      "suggestion": "talho",
+      "context": "comércio",
+      "explanation": "Em pt-PT usa-se 'talho'."
+    },
+    "açougueiro": {
+      "suggestion": "cortador / magarefe / homem do talho",
+      "context": "comércio",
+      "explanation": "Em pt-PT usa-se 'talhante'."
+    },
+    "aeromoça": {
+      "suggestion": "hospedeira de bordo",
+      "context": "aviação",
+      "explanation": "Em pt-PT usa-se 'hospedeira de bordo'."
+    },
+    "água-viva": {
+      "suggestion": "alforreca",
+      "context": "zoologia",
+      "explanation": "Em pt-PT usa-se 'alforreca'."
+    },
+    "alfavaca": {
+      "suggestion": "manjericão",
+      "context": "botânica",
+      "explanation": "Em pt-PT usa-se 'manjericão'."
+    },
+    "aluguel": {
+      "suggestion": "aluguer",
+      "context": "imobiliário / bens",
+      "explanation": "Em pt-PT usa-se 'aluguer' (bens móveis) ou 'renda' (imóveis)."
+    },
+    "aposentadoria": {
+      "suggestion": "reforma",
+      "context": "trabalho",
+      "explanation": "Em pt-PT usa-se 'reforma'."
+    },
+    "aposentado": {
+      "suggestion": "reformado",
+      "context": "trabalho",
+      "explanation": "Em pt-PT usa-se 'reformado'."
+    },
+    "aposentar": {
+      "suggestion": "reformar-se",
+      "context": "trabalho",
+      "explanation": "Em pt-PT usa-se 'reformar-se'."
+    },
+    "aterrissagem": {
+      "suggestion": "aterragem",
+      "context": "aviação",
+      "explanation": "Em pt-PT usa-se 'aterragem'."
+    },
+    "aterrissar": {
+      "suggestion": "aterrar",
+      "context": "aviação",
+      "explanation": "Em pt-PT usa-se 'aterrar'."
+    },
+    "banheiro": {
+      "suggestion": "casa de banho",
+      "context": "edifícios",
+      "explanation": "Em pt-PT usa-se 'casa de banho' (banheiro é quem vigia na praia)."
+    },
+    "bala": {
+      "suggestion": "rebuçado",
+      "context": "doces",
+      "explanation": "Em pt-PT o doce chama-se 'rebuçado' ('bala' é projétil)."
+    },
+    "balas": {
+      "suggestion": "rebuçados",
+      "context": "doces",
+      "explanation": "Em pt-PT doces são 'rebuçados'."
+    },
+    "bandeide": {
+      "suggestion": "penso rápido",
+      "context": "saúde",
+      "explanation": "Em pt-PT usa-se 'penso rápido'."
+    },
+    "boate": {
+      "suggestion": "discoteca",
+      "context": "lazer",
+      "explanation": "Em pt-PT usa-se 'discoteca'."
+    },
+    "caminhonete": {
+      "suggestion": "carrinha",
+      "context": "veículos",
+      "explanation": "Em pt-PT usa-se 'carrinha'."
+    },
+    "canhota": {
+      "suggestion": "canhoto / esquerdino",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se 'esquerdino'."
+    },
+    "canhoto": {
+      "suggestion": "esquerdino",
+      "context": "geral",
+      "explanation": "Em pt-PT usa-se preferencialmente 'esquerdino' (ou canhoto)."
+    },
+    "carona": {
+      "suggestion": "boleia",
+      "context": "transporte",
+      "explanation": "Em pt-PT usa-se 'boleia'."
+    },
+    "carteira de motorista": {
+      "suggestion": "carta de condução",
+      "context": "documentos",
+      "explanation": "Em pt-PT usa-se 'carta de condução'."
+    },
+    "celular": {
+      "suggestion": "telemóvel",
+      "context": "tecnologia",
+      "explanation": "Em pt-PT usa-se 'telemóvel' ('celular' apenas no sentido biológico)."
+    },
+    "celulares": {
+      "suggestion": "telemóveis",
+      "context": "tecnologia",
+      "explanation": "Em pt-PT usa-se 'telemóveis'."
+    },
+    "chiclete": {
+      "suggestion": "pastilha elástica",
+      "context": "doces",
+      "explanation": "Em pt-PT usa-se 'pastilha elástica'."
+    },
+    "concorrente": {
+      "suggestion": "concorrente / candidato",
+      "context": "geral",
+      "explanation": "Ok em pt-PT."
+    },
+    "computador de bordo": {
+      "suggestion": "computador de bordo",
+      "context": "geral",
+      "explanation": "Ok."
+    },
+    "criança pequena": {
+      "suggestion": "miúdo / criança",
+      "context": "geral",
+      "explanation": "Em pt-PT é muito comum 'miúdo'."
+    },
+    "esparadrapo": {
+      "suggestion": "adesivo",
+      "context": "saúde",
+      "explanation": "Em pt-PT usa-se 'adesivo'."
+    },
+    "estrada de ferro": {
+      "suggestion": "caminho de ferro",
+      "context": "transportes",
+      "explanation": "Em pt-PT usa-se 'caminho de ferro'."
+    },
+    "faixa de pedestres": {
+      "suggestion": "passadeira",
+      "context": "trânsito",
+      "explanation": "Em pt-PT usa-se 'passadeira'."
+    },
+    "pedestre": {
+      "suggestion": "peão",
+      "context": "trânsito",
+      "explanation": "Em pt-PT usa-se 'peão'."
+    },
+    "pedestres": {
+      "suggestion": "peões",
+      "context": "trânsito",
+      "explanation": "Em pt-PT usa-se 'peões'."
+    },
+    "geladeira": {
+      "suggestion": "frigorífico",
+      "context": "eletrodomésticos",
+      "explanation": "Em pt-PT usa-se 'frigorífico'."
+    },
+    "goleiro": {
+      "suggestion": "guarda-redes",
+      "context": "desporto",
+      "explanation": "Em pt-PT usa-se 'guarda-redes'."
+    },
+    "grampeador": {
+      "suggestion": "agrafador",
+      "context": "escritório",
+      "explanation": "Em pt-PT usa-se 'agrafador'."
+    },
+    "grampear": {
+      "suggestion": "agrafar",
+      "context": "escritório",
+      "explanation": "Em pt-PT usa-se 'agrafar'."
+    },
+    "grampo": {
+      "suggestion": "agrafe",
+      "context": "escritório",
+      "explanation": "Em pt-PT usa-se 'agrafe'."
+    },
+    "injetável": {
+      "suggestion": "injetável",
+      "context": "geral",
+      "explanation": "Ok."
+    },
+    "maiô": {
+      "suggestion": "fato de banho",
+      "context": "vestuário",
+      "explanation": "Em pt-PT usa-se 'fato de banho'."
+    },
+    "mamadeira": {
+      "suggestion": "biberão",
+      "context": "puericultura",
+      "explanation": "Em pt-PT usa-se 'biberão'."
+    },
+    "meio-fio": {
+      "suggestion": "passeio / lancil",
+      "context": "rua",
+      "explanation": "Em pt-PT usa-se 'lancil' ou 'borda do passeio'."
+    },
+    "moletom": {
+      "suggestion": "camisola de capuz / fato de treino",
+      "context": "vestuário",
+      "explanation": "Em pt-PT usa-se 'camisola de treino / capuz'."
+    },
+    "motorista": {
+      "suggestion": "condutor / motorista",
+      "context": "trânsito",
+      "explanation": "Em pt-PT usa-se frequentemente 'condutor'."
+    },
+    "perua": {
+      "suggestion": "carrinha",
+      "context": "veículos",
+      "explanation": "Em pt-PT usa-se 'carrinha'."
+    },
+    "salário mínimo": {
+      "suggestion": "salário mínimo / ordenado mínimo",
+      "context": "trabalho",
+      "explanation": "Em pt-PT diz-se frequentemente 'ordenado mínimo'."
+    },
+    "semáforo": {
+      "suggestion": "semáforo / sinal luminoso",
+      "context": "trânsito",
+      "explanation": "Em pt-PT também se usam os termos 'sinal' ou 'semáforos'."
+    },
+    "sorvete": {
+      "suggestion": "gelado",
+      "context": "alimentação",
+      "explanation": "Em pt-PT usa-se 'gelado' (sorvete é apenas sorbet de fruta sem leite)."
+    },
+    "suéter": {
+      "suggestion": "camisola",
+      "context": "vestuário",
+      "explanation": "Em pt-PT usa-se 'camisola'."
+    },
+    "torcida": {
+      "suggestion": "claque / adeptos",
+      "context": "desporto",
+      "explanation": "Em pt-PT usa-se 'adeptos' ou 'claque'."
+    },
+    "torcedor": {
+      "suggestion": "adepto",
+      "context": "desporto",
+      "explanation": "Em pt-PT usa-se 'adepto'."
+    },
+    "torcedores": {
+      "suggestion": "adeptos",
+      "context": "desporto",
+      "explanation": "Em pt-PT usa-se 'adeptos'."
+    },
+    "travesseiro": {
+      "suggestion": "almofada",
+      "context": "cama",
+      "explanation": "Em pt-PT diz-se habitualmente 'almofada' (travesseiro existe mas é menos comum)."
+    },
+    "zíper": {
+      "suggestion": "fecho de correr / fecho éclair",
+      "context": "vestuário",
+      "explanation": "Em pt-PT usa-se 'fecho de correr'."
+    }
+  },
+  "consonant_rules": {
+    "contatar": "contactar",
+    "contatado": "contactado",
+    "contatada": "contactada",
+    "contatando": "contactando",
+    "contatamos": "contactamos",
+    "contatam": "contactam",
+    "contate": "contacte",
+    "contatem": "contactem",
+    "contato": "contacto (ou contato se estritamente pt-BR)",
+    "contatos": "contactos",
+    "impactar": "impactar (prefira influenciar ou ter impacto)",
+    "concepção": "conceção (AO90) / concepção (pre-AO90 com p mudo eliminado em pt-PT)",
+    "recepção": "receção (AO90)",
+    "óptico": "ótico (AO90) / óptico (pre-AO90 válido em pt-PT)",
+    "diretório": "diretoria / pasta (em informática em pt-PT prefere-se pasta ou diretoria)",
+    "seção": "secção (em pt-PT a consoante 'c' é pronunciada e mantida em secção)",
+    "seções": "secções",
+    "rastreamento": {
+      "suggestion": "rastreio, seguimento, acompanhamento",
+      "context": "computação / engenharia / visão",
+      "explanation": "Em pt-PT prefere-se o substantivo 'rastreio' ou 'seguimento'. 'Rastreamento' é a variante típica de pt-BR e de decalques para 'tracking'."
+    },
+    "rastreamentos": {
+      "suggestion": "rastreios, seguimentos, acompanhamentos",
+      "context": "computação / engenharia / visão",
+      "explanation": "Plural de rastreamento. Em pt-PT prefira 'rastreios' ou 'seguimentos'."
+    }
+  }
+}

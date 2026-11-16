@@ -1,0 +1,17 @@
+# AI_tools: one environment for uni_vault/ and spellcheck_pt/
+# Create:  python3.12 -m venv .venv && .venv/bin/pip install -r requirements.txt
+
+# Transcription (uni_vault/transcribe.py, watcher.py) — Apple Silicon only
+mlx-whisper==0.4.3
+tqdm
+
+# PDFs (enrich_note.py, make_ai_note.py, spellcheck_pt)
+pypdf==6.19.0
+
+# Plots
+matplotlib==3.11.2
+
+# Cloud transcription tests (test_cloud_transcription.py)
+python-dotenv
+groq
+google-genai

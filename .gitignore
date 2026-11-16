@@ -1,0 +1,17 @@
+# Environment (rebuild with requirements.txt)
+.venv/
+__pycache__/
+*.pyc
+.ruff_cache/
+.env
+
+# Link to the Obsidian vault in Google Drive
+uni_vault/vault
+
+# Large or copyrighted reference material (kept in Google Drive / locally)
+spellcheck_pt/*.pdf
+uni_vault/rename_undo.json
+
+# Build leftovers and macOS
+texput.log
+.DS_Store
