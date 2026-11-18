@@ -101,6 +101,88 @@ def extract_text_from_file(file_path):
 
 WORD_REGEX = re.compile(r"\b[a-zA-ZçáéíóúâêôãõàüÁÉÍÓÚÂÊÔÃÕÀÜ-]+(?:\b|(?=[-]))")
 
+# Common function words, auxiliaries, and non-verb -ar/-er/-ir nouns/adjectives
+# excluded from Option A same-sentence verb-repetition checks.
+REPETITION_IGNORE_WORDS = {
+    "sobre", "entre", "através", "para", "como", "mais", "menos", "quando",
+    "onde", "porque", "mesmo", "mesma", "mesmos", "mesmas", "muito", "muita",
+    "muitos", "muitas", "outro", "outra", "outros", "outras", "tanto", "tanta",
+    "tantos", "tantas", "assim", "ainda", "também", "apenas", "durante",
+    "enquanto", "segundo", "conforme", "sendo", "estar", "estava", "estão",
+    "foram", "serão", "seria", "tendo", "tinha", "havia", "houve", "poder",
+    "podem", "podendo", "fazer", "fazem", "fazendo", "dever", "devem",
+    "lugar", "melhor", "maior", "menor", "superior", "inferior", "anterior",
+    "posterior", "exterior", "interior", "particular", "similar", "regular",
+    "linear", "circular", "angular", "modular", "familiar", "popular",
+    "singular", "tabular", "retangular", "triangular", "perpendicular",
+}
+
+VERB_SUFFIXES = (
+    "aríamos", "eríamos", "iríamos", "ávamos", "íamos",
+    "ariam", "eriam", "iriam", "armos", "ermos", "irmos",
+    "arão", "erão", "irão", "ando", "endo", "indo",
+    "aram", "eram", "iram", "avam", "aria", "eria", "iria",
+    "arei", "erei", "irei", "asse", "esse", "isse",
+    "aste", "este", "iste", "amos", "emos", "imos",
+    "ará", "erá", "irá", "ara", "era", "ira", "ava",
+    "ou", "eu", "iu", "ar", "er", "ir", "am", "em",
+)
+
+DEVERBAL_SUFFIXES = (
+    "ações", "ições", "ação", "ição", "amento", "imento",
+    "ados", "adas", "idos", "idas", "ado", "ada", "ido", "ida",
+    "ante", "ente", "inte", "ável", "ível",
+)
+
+
+def _verb_stem_pt(word_lower):
+    """Return (stem, is_verb_form) for Option A same-sentence repetition checks."""
+    if len(word_lower) < 5 or "-" in word_lower or word_lower in REPETITION_IGNORE_WORDS:
+        return None, False
+
+    # Engineering/abstract nouns ending in -agem / -igem (e.g., maquinagem, fresagem, estampagem)
+    if word_lower.endswith(("agem", "igem")):
+        return word_lower, False
+
+    for suffix in VERB_SUFFIXES:
+        if word_lower.endswith(suffix):
+            stem = word_lower[: -len(suffix)]
+            if len(stem) >= 4:
+                return stem, True
+
+    for suffix in DEVERBAL_SUFFIXES:
+        if word_lower.endswith(suffix):
+            stem = word_lower[: -len(suffix)]
+            if len(stem) >= 4:
+                return stem, False
+
+    return word_lower, False
+
+
+def find_sentence_verb_repetitions(text):
+    """Find repeated verb/deverbal stems within the same sentence (Option A)."""
+    repeats = []
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    for sent in sentences:
+        if not sent.strip():
+            continue
+        tokens = re.findall(r"\b[a-zA-ZçáéíóúâêôãõàüÁÉÍÓÚÂÊÔÃÕÀÜ-]+\b", sent)
+        by_stem = {}
+        for tok in tokens:
+            if is_number_or_code(tok):
+                continue
+            w_lower = tok.lower()
+            stem, is_verb = _verb_stem_pt(w_lower)
+            if not stem:
+                continue
+            by_stem.setdefault(stem, []).append((tok, is_verb))
+
+        for stem, occs in by_stem.items():
+            if len(occs) >= 2 and any(is_verb for _, is_verb in occs):
+                words = [w for w, _ in occs]
+                repeats.append((stem, words))
+    return repeats
+
 
 def is_number_or_code(token):
     # Contains digits, underscores, slashes, or symbols
@@ -131,6 +213,21 @@ def check_portuguese(file_path, verbose=False):
     for loc, text in pages_or_lines:
         if not text.strip():
             continue
+
+        # 0. Same-sentence verb stem repetition check (Option A)
+        for stem, rep_words in find_sentence_verb_repetitions(text):
+            key = (stem, loc, "VERB_REPEAT")
+            if key not in seen_keys:
+                seen_keys.add(key)
+                joined = " ... ".join(f"'{w}'" for w in rep_words)
+                findings.append({
+                    "loc": loc,
+                    "type": "Style / Repetition",
+                    "severity": "MEDIUM",
+                    "word": " ... ".join(rep_words),
+                    "suggestion": "Variar o verbo ou reestruturar a frase",
+                    "explanation": f"Repetição do mesmo radical verbal na mesma frase ({joined}).",
+                })
 
         # 1. Multi-word phrases in pt-BR or AI-isms (e.g. "carteira de motorista", "faixa de pedestres")
         text_lower = text.lower()
@@ -249,11 +346,13 @@ def format_report(file_path, findings, elapsed, loc_label):
     # Group findings by type
     ai_isms = [f for f in findings if f["type"] == "AI-ISM / Calque"]
     pt_br = [f for f in findings if "PT-BR" in f["type"]]
+    repetitions = [f for f in findings if f["type"] == "Style / Repetition"]
     spelling = [f for f in findings if f["type"] == "Spelling / Unknown"]
 
     lines.append(f"\nSummary: {len(findings)} items flagged")
     lines.append(f"  - 🚫 AI-isms / False Friends (e.g. escopo): {len(ai_isms)}")
     lines.append(f"  - 🇧🇷 Brazilian Portuguese (pt-BR terms):     {len(pt_br)}")
+    lines.append(f"  - 🔁 Verb Repetitions (same sentence):      {len(repetitions)}")
     lines.append(f"  - ✍️ Unknown / Spelling doubts:             {len(spelling)}")
     lines.append("-" * 80)
 
@@ -271,8 +370,15 @@ def format_report(file_path, findings, elapsed, loc_label):
             lines.append(f"    ➜ Sugestão pt-PT: {item['suggestion']}")
             lines.append(f"    ℹ {item['explanation']}\n")
 
+    if repetitions:
+        lines.append("\n[3] 🔁 REPETIÇÕES VERBAIS NA MESMA FRASE (Estilo):")
+        for item in repetitions:
+            lines.append(f"  • [{loc_label} {item['loc']}] {item['word']}")
+            lines.append(f"    ➜ Sugestão: {item['suggestion']}")
+            lines.append(f"    ℹ {item['explanation']}\n")
+
     if spelling:
-        lines.append(f"\n[3] ✍️ OUTRAS PALAVRAS NÃO RECONHECIDAS ({len(spelling)}):")
+        lines.append(f"\n[4] ✍️ OUTRAS PALAVRAS NÃO RECONHECIDAS ({len(spelling)}):")
         lines.append("  (Se forem termos técnicos legítimos, adicione-os ao ficheiro 'whitelist.txt')")
         for item in spelling[:30]:  # limit to first 30 to avoid overwhelming output
             lines.append(f"  • [{loc_label} {item['loc']}] '{item['word']}'")

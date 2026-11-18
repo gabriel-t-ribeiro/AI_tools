@@ -470,6 +470,51 @@
       "suggestion": "fecho de correr / fecho éclair",
       "context": "vestuário",
       "explanation": "Em pt-PT usa-se 'fecho de correr'."
+    },
+    "usinagem": {
+      "suggestion": "maquinagem",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Em pt-PT de engenharia mecânica usa-se estritamente 'maquinagem' (nunca 'usinagem', que é termo exclusivo do pt-BR)."
+    },
+    "usinagens": {
+      "suggestion": "maquinagens",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Plural de usinagem. Em pt-PT use 'maquinagens'."
+    },
+    "usinar": {
+      "suggestion": "maquinar",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Em pt-PT usa-se 'maquinar' ('usinar' é termo exclusivo do pt-BR)."
+    },
+    "usinado": {
+      "suggestion": "maquinado",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Em pt-PT usa-se 'maquinado' ('usinado' é termo exclusivo do pt-BR)."
+    },
+    "usinada": {
+      "suggestion": "maquinada",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Em pt-PT usa-se 'maquinada' ('usinada' é termo exclusivo do pt-BR)."
+    },
+    "usinados": {
+      "suggestion": "maquinados",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Em pt-PT usa-se 'maquinados' ('usinados' é termo exclusivo do pt-BR)."
+    },
+    "usinadas": {
+      "suggestion": "maquinadas",
+      "context": "engenharia mecânica / fabrico",
+      "explanation": "Em pt-PT usa-se 'maquinadas' ('usinadas' é termo exclusivo do pt-BR)."
+    },
+    "rastreamento": {
+      "suggestion": "rastreio, seguimento, acompanhamento",
+      "context": "computação / engenharia / visão",
+      "explanation": "Em pt-PT prefere-se o substantivo 'rastreio' ou 'seguimento'. 'Rastreamento' é a variante típica de pt-BR e de decalques para 'tracking'."
+    },
+    "rastreamentos": {
+      "suggestion": "rastreios, seguimentos, acompanhamentos",
+      "context": "computação / engenharia / visão",
+      "explanation": "Plural de rastreamento. Em pt-PT prefira 'rastreios' ou 'seguimentos'."
     }
   },
   "consonant_rules": {
@@ -489,16 +534,6 @@
     "óptico": "ótico (AO90) / óptico (pre-AO90 válido em pt-PT)",
     "diretório": "diretoria / pasta (em informática em pt-PT prefere-se pasta ou diretoria)",
     "seção": "secção (em pt-PT a consoante 'c' é pronunciada e mantida em secção)",
-    "seções": "secções",
-    "rastreamento": {
-      "suggestion": "rastreio, seguimento, acompanhamento",
-      "context": "computação / engenharia / visão",
-      "explanation": "Em pt-PT prefere-se o substantivo 'rastreio' ou 'seguimento'. 'Rastreamento' é a variante típica de pt-BR e de decalques para 'tracking'."
-    },
-    "rastreamentos": {
-      "suggestion": "rastreios, seguimentos, acompanhamentos",
-      "context": "computação / engenharia / visão",
-      "explanation": "Plural de rastreamento. Em pt-PT prefira 'rastreios' ou 'seguimentos'."
-    }
+    "seções": "secções"
   }
 }

@@ -796,6 +796,26 @@
     "rastreando": {
       "suggestion": "a seguir, a acompanhar, a monitorizar, no rastreio de",
       "explanation": "Gerúndio de rastrear ('tracking'). Em pt-PT prefira 'a seguir', 'a acompanhar' ou 'no rastreio'."
+    },
+    "refinadas": {
+      "suggestion": "melhoradas, detalhadas, aprimoradas, aperfeiçoadas",
+      "explanation": "Frequentemente decalcado do inglês 'refined'. Em português técnico, 'refinar' remete primariamente para processos químicos/materiais (petróleo, açúcar, metais). Para ideias, modelos, conceitos ou dados, prefira 'melhoradas', 'detalhadas', 'aperfeiçoadas' ou 'aprimoradas'."
+    },
+    "refinada": {
+      "suggestion": "melhorada, detalhada, aprimorada, aperfeiçoada",
+      "explanation": "Decalque frequente de 'refined'. Para ideias, geometrias ou conceitos, prefira 'melhorada', 'detalhada', 'aperfeiçoada' ou 'aprimorada'."
+    },
+    "refinados": {
+      "suggestion": "melhorados, detalhados, aprimorados, aperfeiçoados",
+      "explanation": "Decalque frequente de 'refined'. Em português técnico prefira 'melhorados', 'detalhados', 'aperfeiçoados' ou 'aprimorados'."
+    },
+    "refinado": {
+      "suggestion": "melhorado, detalhado, aprimorado, aperfeiçoado",
+      "explanation": "Decalque frequente de 'refined'. Em textos técnicos e académicos prefira 'melhorado', 'detalhado', 'aperfeiçoado' ou 'aprimorado'."
+    },
+    "refinar": {
+      "suggestion": "melhorar, detalhar, aprimorar, aperfeiçoar",
+      "explanation": "Decalque de 'to refine'. Para processos concetuais, modelos ou metodologias, prefira 'melhorar', 'detalhar', 'aperfeiçoar' ou 'aprimorar'."
     }
   }
 }
